@@ -1,7 +1,32 @@
+# image: node:18
+
+# stages:
+#   - install
+#   - build
+
+# cache:
+#   paths:
+#     - node_modules/
+
+# install_dependencies:
+#   stage: install
+#   script:
+#     - npm install
+
+# build_app:
+#   stage: build
+#   script:
+#     - npm run build
+#   artifacts:
+#     paths:
+#       - dist/
+
+
 image: node:18
 
 stages:
   - install
+  - test
   - build
 
 cache:
@@ -11,7 +36,13 @@ cache:
 install_dependencies:
   stage: install
   script:
-    - npm install
+    - npm ci
+
+test_app:
+  stage: test
+  script:
+    - npm run lint
+    - npm test -- --watch=false
 
 build_app:
   stage: build
