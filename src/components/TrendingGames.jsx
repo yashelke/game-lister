@@ -5,7 +5,7 @@ import { ThemeContext } from '../Context/ThemeContext.jsx';
 
 function TrendingGames({gameList}) {
       const { theme } = useContext(ThemeContext);
-      const x = ;
+      // const x = ;
 
 useEffect(()=>
 {
