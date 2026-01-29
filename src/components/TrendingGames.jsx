@@ -5,6 +5,7 @@ import { ThemeContext } from '../Context/ThemeContext.jsx';
 
 function TrendingGames({gameList}) {
       const { theme } = useContext(ThemeContext);
+      const x = ;
 
 useEffect(()=>
 {
@@ -16,6 +17,7 @@ useEffect(()=>
 
   return (
     <div className='mt-5 hidden md:block'>
+
       <h2>We are performing DevOps.</h2>
         <h2
          className={`font-bold text-[30px] ${
