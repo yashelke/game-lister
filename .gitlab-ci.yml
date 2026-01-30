@@ -43,12 +43,9 @@ dockerize:
 
 k8s_deploy:
   stage: deploy
-  image:
-    name: bitnami/kubectl:latest
-    entrypoint: [""]
+  tags:
+    - k8s-deploy
   script:
-    - echo "$KUBECONFIG_B64" | base64 -d > kubeconfig
-    - export KUBECONFIG=$PWD/kubeconfig
     - kubectl get nodes
     - kubectl apply -f k8s/deployment.yaml
-    - kubectl apply -f k8s/service.yaml
+
