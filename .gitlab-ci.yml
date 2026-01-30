@@ -44,6 +44,7 @@ dockerize:
 k8s_deploy:
   stage: deploy
   image: bitnami/kubectl:latest
+  entrypoint: [""]
   script:
     - kubectl config use-context docker-desktop
     - kubectl apply -f k8s/deployment.yaml
